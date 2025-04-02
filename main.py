@@ -39,14 +39,14 @@ def get_motor_commands():
     forward_back = -apply_dead_zone(joystick.get_axis(1))  
     baseSpeed = round(forward_back * 255)
     
-    turn = apply_dead_zone(joystick.get_axis(2))  
+    turn = apply_dead_zone(joystick.get_axis(3))  
     turnSpeed = round(turn * 255)
 
     leftMotor = max(min(baseSpeed + turnSpeed, 255), -255)
     rightMotor = max(min(baseSpeed - turnSpeed, 255), -255)
 
-    up_thrust = joystick.get_axis(5)  
-    down_thrust = joystick.get_axis(4)  
+    up_thrust = joystick.get_axis(2)  
+    down_thrust = joystick.get_axis(5)  
     upMotor = round(((up_thrust + 1) / 2) * 255)
     downMotor = round(((down_thrust + 1) / 2) * 255)
 
