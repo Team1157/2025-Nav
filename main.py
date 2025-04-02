@@ -17,7 +17,7 @@ pygame.init()
 if pygame.joystick.get_count() == 0:
     print("no joystick found")
     exit()
-joystick = pygame.joystick.Joystick(1)
+joystick = pygame.joystick.Joystick(0)
 joystick.init()
 print("joystick started")
 
